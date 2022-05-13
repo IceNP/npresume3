@@ -1,0 +1,104 @@
+﻿* {
+    color: white;
+}
+
+.galleryheader h1 {
+    text-align: center;
+}
+
+img {
+    border-radius: 8px;
+}
+
+.galleryContainer {
+    width:900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.gallery {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500PX;
+    width: 60%;
+}
+.gallery input {
+    display: none;
+}
+.gallery > img:first-of-type {
+    position: relative;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.galleryImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.25s ease-out;
+}
+
+.thumbnails {
+    margin-top: 10px;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.thumbnailsImg {
+    margin: 0 5px;
+}
+
+.thumbnailsImg img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.thumbnailsImg:first-child {
+    margin-left: 0px;
+}
+.thumbnailsImg:last-child {
+    margin-right: 0px;
+}
+
+#c1:checked + #i1 {
+    opacity: 1;
+}
+#c2:checked + #i2 {
+    opacity: 1;
+}
+#c3:checked + #i3 {
+    opacity: 1;
+}
+#c4:checked + #i4 {
+    opacity: 1;
+}
+#c5:checked + #i5 {
+    opacity: 1;
+}
+#c6:checked + #i6 {
+    opacity: 1;
+}
+#c7:checked + #i7 {
+    opacity: 1;
+}
+#c8:checked + #i8 {
+    opacity: 1;
+}

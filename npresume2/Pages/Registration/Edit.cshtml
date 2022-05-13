@@ -1,0 +1,45 @@
+﻿@page
+@model npresume2.Pages.Registration.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>NpRegistration</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NpRegistration.Npid" />
+            <div class="form-group">
+                <label asp-for="NpRegistration.Npname" class="control-label"></label>
+                <input asp-for="NpRegistration.Npname" class="form-control" />
+                <span asp-validation-for="NpRegistration.Npname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NpRegistration.Email" class="control-label"></label>
+                <input asp-for="NpRegistration.Email" class="form-control" />
+                <span asp-validation-for="NpRegistration.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NpRegistration.Phonenumber" class="control-label"></label>
+                <input asp-for="NpRegistration.Phonenumber" class="form-control" />
+                <span asp-validation-for="NpRegistration.Phonenumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

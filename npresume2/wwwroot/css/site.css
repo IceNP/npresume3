@@ -1,0 +1,23 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background: url(https://th.bing.com/th/id/R.1b892e5674474a039215f8af3b27cc89?rik=C2ta%2fBH%2f6gZ8rA&pid=ImgRaw&r=0) fixed center;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width: 100%;
+}

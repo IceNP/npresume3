@@ -1,0 +1,15 @@
+﻿* {
+    color: white;
+}
+
+.myinfo {
+    text-align: center;
+}
+
+.myinfo h2{
+    font-size: 40px;
+}
+
+.myinfo p {
+    font-size: 30px;
+}

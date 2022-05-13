@@ -1,0 +1,122 @@
+﻿@page
+@model npresume2.Pages.CreateModel
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/hn-bootstrap-js@1.0.3/bootstrap.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css" />
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" />
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#btnAlert").click(function() {
+                    swal({
+                        title:"Confirmation?",
+                        type:"warning",
+                        confirmButtonClass: "btn-danger",
+                        showCancelButton: true,
+                        confirmButtonText: 'Yes',
+                        closeOnConfirm: false
+                    },
+                    function() {
+                        swal("Save!", "Sucessfully Saved.", " Success");
+                    });
+            });
+        });
+    </script>
+
+@*<script type="text/javascript">
+    $(document).ready(function() {
+        $("#btnAlert").click(function() {
+            SaveContact();
+        });
+    });
+    function SaveContact() {
+        var npName = $("#txtNpName").val();
+        var npEmail = $("#txtNpEmail").val();
+        var npPhone = $("#txtNpPhone").val();
+
+        var objNpRegistration = {NpName: npName, NpEmail: npEmail, NpPhone: npPhone};
+
+        $.ajax({
+            async: true,
+            type: 'POST',
+            dataType: 'JSON',
+            contentType: 'application/json; Charset=utf-8',
+            data: JSON.stringify(objNpRegistration),
+            url: '/Pages/Create',
+            success: function(response) {
+                if(response.success == true) {
+                    swal.success(response.message, 'Success Alert', { timeOut 3000 });
+                } else {
+                    swal.information(response.message, 'Information Alert', { timeOut 3000 });
+                }
+            },
+            error: function() {
+                swal.error('There is some problem', 'Error Alert', { tmimeOut 3000 });
+            }
+        });
+    }
+</script>*@
+
+
+<h1>Contact me</h1>
+
+<h4>Please, Fill your infoformation</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NpRegistration.Npname" class="control-label">Name</label>
+                <input asp-for="NpRegistration.Npname" class="form-control" />
+                <span asp-validation-for="NpRegistration.Npname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NpRegistration.Email" class="control-label">E-mail</label>
+                <input asp-for="NpRegistration.Email" class="form-control" />
+                <span asp-validation-for="NpRegistration.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NpRegistration.Phonenumber" class="control-label">Phone number</label>
+                <input asp-for="NpRegistration.Phonenumber" class="form-control" />
+                <span asp-validation-for="NpRegistration.Phonenumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" id="btnAlert" name="Save Contact" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+        <div class="myinfo col-md-4">
+            <h2>My info</h2>
+            <p>Tel:091-2345678</p>
+        </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

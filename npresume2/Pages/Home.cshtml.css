@@ -1,0 +1,80 @@
+﻿* {
+    color: white;
+}
+
+.video1 {
+    margin-left: auto;
+    margin-right: auto;
+    outline: 5px solid rgb(0, 81, 255);
+    align-items: center;
+    border-radius: 30px;
+    overflow: hidden;
+    width: 75%;
+}
+
+.video1 iframe {
+    margin-left: 8%;
+    border-radius: 20px;
+}
+
+.video1 h1 {
+    text-align: center;
+}
+
+.hpvl {
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    background: rgb(90, 90, 90);
+    border: 3px solid rgb(90, 90, 90);
+    border-radius: 10px;
+    font-family: fantasy;
+    padding: 12px 20px;
+    min-width: 200px;
+    justify-items: center;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    position: relative;
+    font-size: 25px;
+}
+
+.btn:hover {
+    color: rgb(90, 90, 90);
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 85, 255);
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0.0;
+    transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+}
+
+.btn1::before {
+    transform: scaleX(0);
+}
+
+.btn2::before {
+    transform: scaleY(0);
+}
+
+.btn1:hover:before {
+    transform: scaleX(1);
+}
+
+.btn2:hover:before {
+    transform: scaleY(1);
+}

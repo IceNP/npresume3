@@ -1,0 +1,19 @@
+﻿.indexenter {
+    margin-left: 25%;
+}
+
+    .indexenter img {
+        justify-content: center;
+        width: 70%;
+    }
+
+    .indexenter button {
+        align-items: center;
+        margin-left: 17%;
+        width: 100px
+    }
+
+        .indexenter button p {
+            align-items: center;
+            padding-top: 20%;
+        }
